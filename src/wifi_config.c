@@ -657,7 +657,7 @@ static int wifi_config_station_connect() {
 
     context->connect_start_time = xTaskGetTickCount();
     sdk_os_timer_setfn(&context->sta_connect_timeout, wifi_config_sta_connect_timeout_callback, context);
-    sdk_os_timer_arm(&context->sta_connect_timeout, 500, 1);
+    sdk_os_timer_arm(&context->sta_connect_timeout, 3000, 1); //Poopi extend timeout - avoid premature timeout
 
     return 0;
 }
